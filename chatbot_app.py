@@ -1,6 +1,6 @@
 # from dotenv import load_dotenv
 # load_dotenv()
-from langgraph.checkpoint.memory import InMemorySaver
+from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 
 import streamlit as st
@@ -27,7 +27,7 @@ st.title("KoolGamer Chatbot App")
 if "messsages" not in st.session_state:
     st.session_state.messages = []
 
-check_pointer = InMemorySaver()
+check_pointer = MemorySaver()
 
 agent = create_react_agent(
     model="openai:gpt-4o-mini",
